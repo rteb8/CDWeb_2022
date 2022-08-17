@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Which Cavalier Daily Section Are You?</title>
+
+    <!-- Boostrap (remove when pasting into CEO) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+
+    <style>
+        #root{
+            font-family: Spartan;
+        }
+
+        /* override bootstrap */
+        .btn-choice:not(:disabled):not(.disabled).active,
+        .show>.btn-choice.dropdown-toggle {
+            color: white;
+            background-color: rgb(75, 176, 216);
+            outline: none;
+        }
+        .choices{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .btn-choice{
+            background-color: rgb(181, 225, 243);
+            box-shadow: 0.2rem .2rem 0.2rem rgba(0,0,0,.08);
+            border-radius: 1px;
+        }
+        .btn-choice:hover{
+            box-shadow: 0.4rem .4rem 0.4rem rgba(0,0,0,.15);
+            border-radius: 1px;
+        }
+
+        /* text questions */
+        .long{
+            width: 100%;
+            padding: 2rem;
+        }
+        .short{
+            width: 33%;
+            padding: 3rem;
+            margin-bottom: 1rem!important;
+        }
+        .quest{
+            background-color: lightgray;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* image questions */
+        .img-choice{
+            width: 33%;
+        }
+        .img-quest{
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .img{
+            width: 100%;
+        }
+
+        /* submit and credit */
+        .btn-submit{
+            color: white;
+            background-color: #6B8EB6;
+            opacity: 75%;
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .btn-submit:hover{
+            opacity: 100%;
+            color: white;
+        }
+        #credit{
+            text-align: right;
+        }
+
+        /* answers */
+        .answer {
+            display: none;
+            background-color: #BBD3E7;
+            text-align: center;
+            padding: 2rem;
+            max-width: 100%;
+            margin-bottom: 5rem;
+        }
+        .res{
+            text-align: center;
+            padding: 1rem;
+        }
+        .descr{
+            text-align: justify;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            margin: 1rem;
+        }
+        .court{
+            font-size: small;
+        }
+        .image-container {
+            height: auto;
+        }
+        .answer-image{
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <form id="form1">
+
+            <h4 class="quest">Literary or non-literary?</h4>
+            <div class="btn-group-toggle choices" data-toggle="buttons">
+                <div class="btn btn-choice short" id="broad_lit">
+                    <input type="radio" name="q1" value="2" autocomplete="off"/>Literary
+                    <br><small>(Sections that write and edit articles)</small>
+                </div>
+                <div class="btn btn-choice short" id="broad_ops">
+                    <input type="radio" name="q1" value="1" autocomplete="off"/>Non-literary
+                    <br><small>(Sections that produce photos and graphics, put together the website, and
+                        manage finances)
+                    </small>
+                </div>
+            </div>
+
+            <!-- Operations Questions -->
+            <div class="opsq" id="ops1" style="display: none">
+                <h4 class="quest">Which U.S. location is on your bucket list?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="1" autocomplete="off"/>NYC
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="2" autocomplete="off"/>Seattle
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="3" autocomplete="off"/>Silicon Valley
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="4" autocomplete="off"/>LA
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="5" autocomplete="off"/>Boston
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq1" value="6" autocomplete="off"/>Jackson Hole
+                    </div>
+                </div>
+            </div>
+            <div class="opsq" id="ops2" style="display: none">
+                <h4 class="quest">What is your favorite weekend activity?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="6" autocomplete="off"/>
+                        Taking photos of the sunrise on Carter's Mountain
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="4" autocomplete="off"/>
+                        Scrolling through TikTok
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="1" autocomplete="off"/>
+                        Researching the next stocks to invest in
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="7" autocomplete="off"/>
+                        Going to a movie
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="5" autocomplete="off"/>
+                        Drawing, painting, knitting ... anything creative!
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq2" value="8" autocomplete="off"/>
+                        Maintaining my lesson streak on Duolingo
+                    </div>
+                </div>
+            </div>
+            <div class="opsq" id="ops3" style="display: none">
+                <h4 class="quest">Choose your ideal meal</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="1" autocomplete="off"/>Filet mignon
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="4" autocomplete="off"/>
+                        Whatever looks the best ... phone always eats first
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="5" autocomplete="off"/>Surprise me
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="6" autocomplete="off"/>Sushi
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="3" autocomplete="off"/>Acai bowl
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq3" value="2" autocomplete="off"/>Pizza
+                    </div>
+                </div>
+            </div>
+            <div class="opsq" id="ops4" style="display: none">
+                <h4 class="quest">You're meeting friends at a coffee shop. What do you get?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="1" autocomplete="off"/>Cold brew
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="4" autocomplete="off"/>
+                        The secret menu option
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="7" autocomplete="off"/>Matcha latte
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="5" autocomplete="off"/>Chai latte
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="2" autocomplete="off"/>
+                        The seasonal flavor
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq4" value="3" autocomplete="off"/>Espresso shot
+                    </div>
+                </div>
+            </div>
+            <div class="opsq" id="ops5" style="display: none">
+                <h4 class="quest">You have one class left in your schedule. What subject do you choose?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="2" autocomplete="off"/>Computer science
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="5" autocomplete="off"/>Drawing
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="7" autocomplete="off"/>Film and animation
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="8" autocomplete="off"/>
+                        Languages ... I love learning a new language!
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="1" autocomplete="off"/>
+                        Accounting ... gotta knock out those Comm School requirements
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="opsq5" value="6" autocomplete="off"/>Art history
+                    </div>
+                </div>
+            </div>
+
+            <!-- Literary Questions -->
+            <div class="litq" id="lit1" style="display: none">
+                <h4 class="quest">Which TV show is your favorite?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="1" autocomplete="off"/>West Wing
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="2" autocomplete="off"/>Grey's Anatomy
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="3" autocomplete="off"/>The Office
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="4" autocomplete="off"/>Gilmore Girls
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="5" autocomplete="off"/>Rick and Morty
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq1" value="6" autocomplete="off"/>Scandal
+                    </div>
+                </div>
+            </div>
+            <div class="litq" id="lit2" style="display: none">
+                <h4 class="quest">Which U.S. location is on your bucket list?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="1" autocomplete="off"/>D.C.
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="7" autocomplete="off"/>Los Angeles
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="3" autocomplete="off"/>NYC
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="8" autocomplete="off"/>Jackson Hole
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="6" autocomplete="off"/>Boston
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq2" value="4" autocomplete="off"/>Portland
+                    </div>
+                </div>
+            </div>
+            <div class="litq" id="lit3" style="display: none">
+                <h4 class="quest">What is your favorite weekend activity?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="8" autocomplete="off"/>
+                        Going to a baseball game
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="5" autocomplete="off"/>
+                        Visiting an art gallery
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="2" autocomplete="off"/>
+                        Catching up on homework
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="9" autocomplete="off"/>
+                        Listening to a podcast
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="10" autocomplete="off"/>
+                        Hanging out with friends
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq3" value="11" autocomplete="off"/>
+                        Watching conspiracy theory videos on YouTube
+                    </div>
+                </div>
+            </div>
+            <div class="litq" id="lit4" style="display: none">
+                <h4 class="quest">You have class at 8 a.m.! What do you do?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="3" autocomplete="off"/>
+                        Wake up at 7:59 a.m., obviously
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="10" autocomplete="off"/>
+                        I have already eaten breakfast, exercised and reviewed tomorrow's homework
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="6" autocomplete="off"/>
+                        I would never do that to myself
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="2" autocomplete="off"/>
+                        Get a quick mediation and yoga session in to get a headstart on my day
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="7" autocomplete="off"/>
+                        Listen to music and start getting ready
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq4" value="11" autocomplete="off"/>
+                        Meet up with friends and get coffee before class
+                    </div>
+                </div>
+            </div>
+            <div class="litq" id="lit5" style="display: none">
+                <h4 class="quest">Which of these celebrities would you like to meet?</h4>
+                <div class="btn-group-toggle choices" data-toggle="buttons">
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="8" autocomplete="off"/>LeBron James
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="6" autocomplete="off"/>Barack Obama
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="9" autocomplete="off"/>Jimmy Fallon
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="3" autocomplete="off"/>Amy Poehler
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="7" autocomplete="off"/>Taylor Swift
+                    </div>
+                    <div class="btn btn-choice short">
+                        <input type="radio" name="litq5" value="1" autocomplete="off"/>Katie Couric
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="btn btn-submit" id="submit-button" type="submit" value="Submit">
+                Submit
+            </button>
+            
+            <br>
+        
+            <!-- Credits: 
+                if list > 1, last two names are "..., A and B"
+                may need credits for CD Graphics and CD Photo
+            -->
+            <div id="credit" class="mb-3">
+                <credit>CD Quiz Developer // Shruthi Nyshadham</credit><br>
+            </div>
+        </form> 
+
+        <!-- Bootstrap JavaScript files -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    
+        <script>
+            //dynamically showing appropriate questions
+            $(document).ready(function() {
+                //collect all the questions of each type
+                opsQuestions = document.getElementsByClassName("opsq");
+                litQuestions = document.getElementsByClassName("litq");
+                //show operations questions
+                $('#broad_ops').click(function() {
+                    Array.prototype.forEach.call(opsQuestions, function(elem){
+                        elem.style.display = 'block';
+                    });
+                    Array.prototype.forEach.call(litQuestions, function(elem){
+                        elem.style.display = 'none';
+                    });
+                });
+                //show literary questions
+                $('#broad_lit').click(function() {
+                    Array.prototype.forEach.call(litQuestions, function(elem){
+                        elem.style.display = 'block';
+                    });
+                    Array.prototype.forEach.call(opsQuestions, function(elem){
+                        elem.style.display = 'none';
+                    });
+                });
+            });
+
+            //find mode of an array
+            function findModes(arr){
+                modes = [];
+                max = 0;
+                for(i = 1; i < arr.length; i++){ //starting from 1 since 0 is not a section number
+                    if(arr[i] > max) //find max # of times a section appears
+                        max = arr[i];
+                }
+                for(i = 1; i < arr.length; i++) { //find all the sections that appear that many times
+                    if(arr[i] == max)
+                        modes.push(i)
+                }
+                return modes;
+            }
+
+            //calculating results on form submit
+            document.getElementById("form1").onsubmit=function() {
+                document.getElementById("submit-button").style.display = "none";
+                broad = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+                switch(broad){
+                    case 1: //ops
+                        /*Key
+                            1: Finance/Advertising
+                            2: Website
+                            3: Production
+                            4: Social media
+                            5: Graphics
+                            6: Photo
+                            7: Video
+                            8: Translation
+                        */
+                        opsResults = [];
+                        opsResults[0] = parseInt(document.querySelector('input[name = "opsq1"]:checked').value);
+                        opsResults[1] = parseInt(document.querySelector('input[name = "opsq2"]:checked').value);
+                        opsResults[2] = parseInt(document.querySelector('input[name = "opsq3"]:checked').value);
+                        opsResults[3] = parseInt(document.querySelector('input[name = "opsq4"]:checked').value);
+                        opsResults[4] = parseInt(document.querySelector('input[name = "opsq5"]:checked').value);
+                        counts = [0, 0, 0, 0, 0, 0, 0, 0, 0] //indices 1-8 correspond to the sections
+                        for(i = 0; i < opsResults.length; i++){ //stores counts for each section in counts array
+                            sectionNumber = opsResults[i];
+                            counts[sectionNumber]++;
+                        }
+                        modes = findModes(counts);
+                        for(i = 0; i < modes.length; i++){ //for every result (up to 5), build and display answer box
+                            var title; var descr; var image; var court;
+                            switch(modes[i]){
+                                case 1:
+                                    title = "Finance/Advertising";
+                                    descr = "The Finance Team is a versatile group in which members conduct their own self-selected projects for the term. Whether it be taking a deep dive into the paper's historical financial records, observing its online traffic or brainstorming ways to better optimize data collection and financial bookkeeping, Finance staff members strive to better the paper through research and analysis. The Advertising section is responsible for selling advertisements, researching potential clients and collecting payment from clients. Advertising representatives earn between 10% - 30% commission on sales that they make.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/8baa179b-eeae-4162-84c1-31c1b723d1f6.original.png";
+                                    break;
+                                case 2:
+                                    title = "Website";
+                                    descr = "The Website team is responsible for the maintenance and design upkeep of The Cavalier Daily's website. This is a recently formed section focused on gathering a team of individuals to take on a direct role of transforming and reimagining the CD site to best show and represent all the newspaper has to offer online. Familiarity with coding basics and any level of experience in frontend development (working with HTML, CSS, Bootstrap, etc.) is recommended, but no web development experience is required to join, and we are happy to learn and grow as a team. If you're interested in the intersection of computer science, web design and journalism, Website is the perfect place for you!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/7d908132-c327-4a14-aa32-f260c1479d98.original.jpg";
+                                    break;
+                                case 3:
+                                    title = "Production";
+                                    descr = "The Production department is in charge of designing the weekly newspaper by combining writers' articles with visual media from the Photography and Graphics teams to create stunningly crisp editorial designs. Staffers use Adobe InDesign and Photoshop on a weekly basis to assemble the print issue of the paper while simultaneously developing new design strategies for the long term to help ensure the paper constantly evolves. If you have an eye for design, you'll feel right at home on the Production team!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/4bd4a08c-06e4-494c-b452-aca99ee7a477.original.jpg";
+                                    break;
+                                case 4:
+                                    title = "Social Media";
+                                    descr = "The social media section manages The Cavalier Daily's developing efforts on social media such as Twitter, Facebook, Instagram and more. We aim to spread our content across the web to reach as wide an audience as possible. Want to get involved? This semester, we're seeking bold, innovative, creative self-starters to contribute new strategies and pitch exciting ideas about how to shape, arguably, the most public face of The Cavalier Daily.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/53d6a430-0a14-42cf-916a-0bd9ff83d153.original.jpg";
+                                    break;
+                                case 5:
+                                    title = "Graphics";
+                                    descr = "Graphics is looking for new staff members to help create visual content for the paper. As a Graphics team we work closely with Photo, Production and the other members of Operations. Using programs like Adobe Illustrator, Procreate and Photoshop, we make illustrations, vector graphics, infographics, charts and anything visual for the print and digital paper. You don't need to have previous experience to join the graphics team, and we will do our best to provide our members with all of the resources they need to participate.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/b2aaf221-0e57-4a6c-a406-9007e0a3cdbc.original.jpg";
+                                    break;
+                                case 6:
+                                    title = "Photo";
+                                    descr = "The Cavalier Daily Photo department gets full access to the paper's pro-level DSLRs and lenses. CD photographers get the chance to cover a variety of events on grounds — from varsity basketball games to local concerts, our photographers get passes to get right up to the action. Photographers' work is shared in a variety of formats, including but not limited to: the print edition, online articles, Facebook, Twitter and Instagram. While many photographers have a great deal of experience, anyone is welcome to join the Photo department. Even first-time photographers, eager to get involved, can be trained with our equipment and sent out to shoot fantastic photos for the paper!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/2b06c942-9308-4dd1-bdc4-ee4b48ce8956.original.jpg";
+                                    break;
+                                case 7:
+                                    title = "Video";
+                                    descr = "We are looking for motivated and passionate individuals to join the Video staff and help shape The Cavalier Daily's approach to Video. Video content is one of the most relevant and exciting mediums in news right now, and our goal this semester is to incorporate video throughout the paper. Ideal candidates have creative ideas for content and experience with video editing or production of some kind (editing, scripting, camerawork, etc.), but none is required to join the section. Having your own equipment is also helpful but not required, aside from having a computer or laptop capable of running Adobe Premiere. We look forward to your application! If you have an interest in creating professional, creative, journalistic content, Video is the right place for you.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/ff56815b-1e0a-4716-be71-b48facaec341.original.jpg";
+                                    break;
+                               	case 8:
+                                    title = "Mandarin/Spanish Translation";
+                                    descr = "The translation section is looking for students with high proficiency levels in Spanish or Mandarin to join our team. As a team member, you and a partner will be translating one article per week. No previous translating experience is needed. Join us in making The Cavalier Daily more accessible to all members of the Charlottesville community, all while practicing your translating skills!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/a89a81e0-2efa-48f6-a647-e5acd9937a3f.original.jpg";
+                                    break;
+                            }
+                            num = i + 1; //ensures the correct div is activated and displayed
+                            resId = "res" + num; descrId = "descr" + num; picId = "pic" + num;
+                            courtId = "court" + num; answerId = "answer" + num;
+                            document.getElementById(resId).innerHTML = title;
+                            document.getElementById(descrId).innerHTML = descr;
+                            picture = "<img src='" + image + "' class='answer-image'/>"; // dynamically create img tag
+                            document.getElementById(picId).innerHTML = picture;
+                            document.getElementById(answerId).style.display = "block";
+                        }
+                        break;
+                    case 2: //lit
+                        /*Key
+                            1: News
+                            2: Health & Science
+                            3: Humor
+                            4: Life
+                            5: Cartoon
+                            6: Opinion
+                            7: Arts & Entertainment
+                            8: Sports
+                            9: Podcast
+                            10: Copy
+                            11: Magazine
+                        */
+                        litResults = [];
+                        litResults[0] = parseInt(document.querySelector('input[name = "litq1"]:checked').value);
+                        litResults[1] = parseInt(document.querySelector('input[name = "litq2"]:checked').value);
+                        litResults[2] = parseInt(document.querySelector('input[name = "litq3"]:checked').value);
+                        litResults[3] = parseInt(document.querySelector('input[name = "litq4"]:checked').value);
+                        litResults[4] = parseInt(document.querySelector('input[name = "litq5"]:checked').value);
+                        counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] //indices 1-11 correspond to the sections
+                        for(i = 0; i < litResults.length; i++){ //stores counts for each section in counts array
+                            sectionNumber = litResults[i];
+                            counts[sectionNumber]++;
+                        }
+                        modes = findModes(counts);
+                        console.log(modes);
+                        for(i = 0; i < modes.length; i++){ //for every result (up to 5), build and display answer box
+                            var title; var descr; var image; var court;
+                            switch(modes[i]){
+                                case 1:
+                                    title = "News";
+                                    descr = "News writers cover state, local and University news, including legislation in Richmond, student government organizations on Grounds and important issues facing the University and Charlottesville communities. From breaking news to making national headlines with our investigative journalism, News writers are able to make an impact in the University community by reporting on what students care about. If you are passionate about journalism and want to keep yourself and the University community informed, News is the section for you.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/5c781f05-017c-4bdf-aec7-86cee282b9ac.original.png";
+                                    break;
+                                case 2:
+                                    title = "Health & Science";
+                                    descr = "The Health & Science section hopes to bring on new writers to help increase coverage of the continuing coronavirus pandemic, public health issues, developments in medicine and research, environmental advocacy and technological breakthroughs. H&S writers do not need to be STEM majors or on a pre-med track to join the section — as long as you have a passion for science, there's a place for you on H&S.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/c6c69e6f-3a62-472d-80c9-79c3f25b6a9b.original.png";
+                                    break;
+                                case 3:
+                                    title = "Humor";
+                                    descr = "Humor is looking for new columnists to bring some joy and laughter to the University and Charlottesville communities. As one of the most creative sections of The Cavalier Daily, Humor staffers have the chance to draw inspiration from all around the University and nation, writing pieces on topics ranging from why it's not sad to be single (like, at all) to advocating for the demolishment of the Rotunda, just to name a few. If you like to make other people laugh, Humor would love to hear from you.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/781abe8f-ab34-4bc1-a832-d140d3f401ba.original.png";
+                                    break;
+                                case 4:
+                                    title = "Life";
+                                    descr = "The Life section consists of features, food articles, columns, top 10s and love connection articles. Across all five sections, there are plenty of ways to get involved as Life is focused on highlighting the diversity of the University's events, food and individuals. We're looking for writers ready to share their stories, showcase the school's cultural diversity and advise students through life!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/20b8e485-4fc3-4ec9-9539-d154c9943291.original.png";
+                                    break;
+                                case 5:
+                                    title = "Cartoon";
+                                    descr = "The Cartoon section is looking for creative, thoughtful and innovative people who want to communicate opinions, ideas, interests or current events through cartoons and comics. Anyone is welcome to apply and no experience is necessary!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/b3f45e3e-2f98-4249-b9e1-99af2c159912.original.jpg";
+                                    break;
+                                case 6:
+                                    title = "Opinion";
+                                    descr = "Opinion is searching for new columnists from ideologically diverse backgrounds to write about issues facing the University and Charlottesville communities.  The Opinion section is able to cover an extremely wide range of topics, allowing writers to find their own voice on some of today's most pressing issues. But every piece for Opinion does not necessarily need to be your latest hot take — content ranges from pieces on abolishing parking fees at the gym to advocating for changes in prison sentencing in the Commonwealth. So if you want to make the University a better place and find yourself interested in speaking out on issues that you are passionate about, joining the Opinion section can give you that platform!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/874e6855-e10a-4d6a-a02a-b3c705c5dc87.original.png";
+                                    break;
+                                case 7:
+                                    title = "Arts & Entertainment";
+                                    descr = "A&E wants to bring on new writers that are passionate about music, art and culture to increase the paper's coverage of local Charlottesville artists and musicians as well as national music, television and film releases. Whether you are in love with all things cinema or all things art — or maybe just obsessed with Lady Gaga's newest album — Arts & Entertainment can surely provide you a place to share your love with the University community and beyond.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/083645d6-e201-4d31-9e9b-b14da75b328f.original.png";
+                                    break;
+                                case 8:
+                                    title = "Sports";
+                                    descr = "The Sports section is looking for passionate writers to help tell the stories of the University's student-athletes, coaches, teams and more. Within Sports, there is a wide range of writing opportunities as the section has three subsections — beat writers, feature writers and columnists — and Sports is looking to bring on staffers for all three this spring. So whether you want to interview prominent student-athletes about their experiences at the University, share your analysis for teams' upcoming seasons or games or cover the competitions of one of our 27 varsity teams on Grounds with full press access, Sports wants you as a part of their section.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/457d3b18-2c41-4f8c-aa15-5a3fdc3bf42c.original.png";
+                                    break;
+                                case 9:
+                                    title = "Podcast";
+                                    descr = "\"On Record\" is The Cavalier Daily's weekly podcast series available on Spotify and Apple Podcasts where you can listen to in-depth commentary on University and Charlottesville news. The Podcast section is made up of both writers and producers who receive training upon joining staff. Writers have the opportunity to compose podcast scripts, conduct investigative research and interview sources. Podcast producers are responsible for recording and editing weekly podcast episodes using the Adobe suite. The podcast section is looking to grow and become more established this semester, so staff members will have the opportunity to help expand the podcast and leave a lasting impact.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/f941a99d-f142-4f1c-a89e-63faabef90cd.original.png";
+                                    break;
+                                case 10:
+                                    title = "Copy";
+                                    descr = "While not the best known section, the Copy section is one of the most integral sections on The Cavalier Daily as Copy editors are responsible for ensuring the stylistic and factual accuracy of all articles published by The Cavalier Daily. Each week staffers have the opportunity to spend two hours reading a variety of articles in our copy editing chain — from the most recent breaking news article or album review to the latest opinion hot-take or feature on a student-athlete. Because of the wide range of articles editors get to read, Copy is a great place to start if you know you want to get involved but aren't sure which section to join.";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/90d15383-8608-4c36-b8cc-f99bf5373e56.original.jpg";
+                                    break;
+                                case 11:
+                                    title = "Magazine";
+                                    descr = "The Magazine section is seeking passionate individuals to form a diverse and dynamic team dedicated to telling stories that matter to our community. Our team is composed of designers, photographers, fiction writers, opinion writers and traditional objective writers. Through long-form journalism, abCD writers, photographers and designers have the opportunity to dive deeper into stories and present them in a more visually engaging format. An ideal candidate will want to amplify the voices of their peers and community members and is motivated to shape the vision and future of the abCD Magazine!";
+                                    image = "https://s3.amazonaws.com/snwceomedia/cav/f2eae900-4956-4c31-9042-0061d1178016.original.png";
+                                    break;
+                            }
+                            num = i + 1; //ensures the correct div is activated and displayed
+                            resId = "res" + num; descrId = "descr" + num; picId = "pic" + num;
+                            courtId = "court" + num; answerId = "answer" + num;
+                            document.getElementById(resId).innerHTML = title;
+                            document.getElementById(descrId).innerHTML = descr;
+                            picture = "<img src='" + image + "' class='answer-image'/>"; // dynamically create img tag
+                            document.getElementById(picId).innerHTML = picture;
+                            document.getElementById(answerId).style.display = "block";
+                        }
+                        break;
+                }
+                document.getElementById("end-blurb").style.display = "block";
+                return false; // required to not refresh the page
+            }
+        </script>  
+
+        <div class="answer" id="answer1">
+            <h4 class="res" id="res1"></h4>
+            <hr>
+            <p class="image-container" id="pic1"></p>
+            <credit class="court" id="court1"></credit>
+            <p class="descr" id="descr1"></p>
+        </div>
+        <div class="answer" id="answer2">
+            <h4 class="res" id="res2"></h4>
+            <hr>
+            <p class="image-container" id="pic2"></p>
+            <credit class="court" id="court2"></credit>
+            <p class="descr" id="descr2"></p>
+        </div>
+        <div class="answer" id="answer3">
+            <h4 class="res" id="res3"></h4>
+            <hr>
+            <p class="image-container" id="pic3"></p>
+            <credit class="court" id="court3"></credit>
+            <p class="descr" id="descr3"></p>
+        </div>
+        <div class="answer" id="answer4">
+            <h4 class="res" id="res4"></h4>
+            <hr>
+            <p class="image-container" id="pic4"></p>
+            <credit class="court" id="court4"></credit>
+            <p class="descr" id="descr4"></p>
+        </div>
+        <div class="answer" id="answer5">
+            <h4 class="res" id="res5"></h4>
+            <hr>
+            <p class="image-container" id="pic5"></p>
+            <credit class="court" id="court5"></credit>
+            <p class="descr" id="descr5"></p>
+        </div>
+        <div class="answer" id="end-blurb">
+            To learn more about the different sections you can join and Cavalier Daily recruitment, please click <a href="https://www.cavalierdaily.com/page/2021-recruitment">here</a>. The Cavalier Daily will also be hosting information sessions on Thursday, Feb. 11 and Tuesday, Feb. 16 at 7 p.m.
+        </div>
+    </div>      
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuarantineAlbum</title>
+        <style>
+            #main {
+                margin: auto;
+                padding: 10px;
+            }
+            #answer{
+                background-color: lightpink;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                visibility: hidden;
+                margin: 5px;
+                font-family: serif;
+                width: 75%;
+            }
+            #imgcourtesy{
+                text-align: right;
+            }
+            boldedAnswer{
+                font-weight: bold;
+                font-family: serif;
+            }
+            label {
+                display: block;
+                background-color: lightgray;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 5px;
+                margin: 5px;
+                border-radius: 8px;
+                font-size: 20px;
+                font-weight: lighter;
+                font-family: serif;
+            }
+            h5 {
+                clear: both;
+                background-color: lightblue;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 5px;
+                font-family: serif;
+                font-size: 25px;
+            }
+            button {
+                width: 100px;
+                margin-top: 20px;
+                font-family: serif;
+            }
+            credit{
+                font-style: oblique;
+                font-size: 15px;
+            }
+        </style>             
+        <title>JavaScript Quiz</title>
+    </head>
+    <body>
+            <div id="main"><!-- open main div -->
+            <form id="form1">
+
+                <h5>After long hours of being bored in quarantine, you would typically:</h5>
+                <label><input type="radio" name="q1" value="5" /> Seek out your fifth snack of the day — the goal is to get to double digits</label>
+                <label><input type="radio" name="q1" value="4" /> Go work out and narrowly avoid everyone else doing the same thing</label>
+                <label><input type="radio" name="q1" value="0" /> Stare at your ceiling and indulge that existential dread</label>
+                <label><input type="radio" name="q1" value="3" /> Dance it out while alone in your room</label>
+                <label><input type="radio" name="q1" value="2" /> Bother your family members, pets and anyone you can get on the phone</label>            
+
+                <h5>What non-essential item is sitting in your online shopping cart?</h5>
+                <label><input type="radio" name="q2" value="0" /> A paint and paintbrush set</label>
+                <label><input type="radio" name="q2" value="4" /> A pair of cheap jeans you're ultimately going to bleach or embroider</label>
+                <label><input type="radio" name="q2" value="5" /> A new phone charger — yours is going to snap in half from overuse</label>
+                <label><input type="radio" name="q2" value="3" /> Some roller skates — let's get adventurous!</label>
+                <label><input type="radio" name="q2" value="2" /> Summer clothes that are giving you a newfound sense of hope</label> 
+
+                <h5>What are you missing the most right now?</h5>
+                <label><input type="radio" name="q3" value="4" /> Simply, the homies</label>
+                <label><input type="radio" name="q3" value="0" /> Spending hours on end studying in a cramped — or cozy? — coffee shop</label>
+                <label><input type="radio" name="q3" value="3" /> Running into 30 of your closest acquaintances on the Corner</label>
+                <label><input type="radio" name="q3" value="5" /> Getting your daily Bodo's fix</label>
+                <label><input type="radio" name="q3" value="2" /> Studying in a library and siphoning motivation from those around you</label> 
+                
+                <h5>How many drives have you gone on?</h5>
+                <label><input type="radio" name="q4" value="3" /> A startling amount</label>
+                <label><input type="radio" name="q4" value="4" /> The number is just about equal to the amount of assignments I'm procrastinating</label>
+                <label><input type="radio" name="q4" value="5" /> I've braved a couple trips to my favorite fast food restaurants</label>
+                <label><input type="radio" name="q4" value="2" /> Not enough to warrant a dangerous excursion to the gas station</label>
+                <label><input type="radio" name="q4" value="0" /> My car thinks I've died</label>             
+                
+                <h5>What have you been binge-watching while at home?</h5>
+                <label><input type="radio" name="q5" value="4" /> "Tiger King" — what else?</label>
+                <label><input type="radio" name="q5" value="0" /> "Skins"</label>
+                <label><input type="radio" name="q5" value="5" /> "Too Hot To Handle"</label>
+                <label><input type="radio" name="q5" value="3" /> "That 70's Show"</label>
+                <label><input type="radio" name="q5" value="2" /> Music documentaries, all day everyday</label> 
+
+                <h5>Which tweet sums up your quarantine experience?</h5>
+                <label><input type="radio" name="q6" value="4" /><blockquote class="twitter-tweet"><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></label>
+                <label><input type="radio" name="q6" value="0" /><blockquote class="twitter-tweet"><p lang="en" dir="ltr">sorry my paper was late professor i lost track of time and spent half of tuesday staring at the ceiling wondering if life even matters anymore</p>&mdash; rafia (@rafia_afzal_) <a href="https://twitter.com/rafia_afzal_/status/1250899360294014976?ref_src=twsrc%5Etfw">April 16, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></label>
+                <label><input type="radio" name="q6" value="5" /><blockquote class="twitter-tweet"><p lang="en" dir="ltr">um maybe the day wants to be gently held???? you don't need to seize every time</p>&mdash; dirt prince (@pant_leg) <a href="https://twitter.com/pant_leg/status/1250253070711300096?ref_src=twsrc%5Etfw">April 15, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></label>
+                <label><input type="radio" name="q6" value="2" /><blockquote class="twitter-tweet"><p lang="en" dir="ltr">I miss recoiling from human touch 🥺</p>&mdash; Audrey Kaufman (@KaufmanAudrey) <a href="https://twitter.com/KaufmanAudrey/status/1249452631098929153?ref_src=twsrc%5Etfw">April 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></label>
+                <label><input type="radio" name="q6" value="3" /><blockquote class="twitter-tweet"><p lang="en" dir="ltr">I'm not coming out of my cage nor am I doing just fine</p>&mdash; glamorous reptile (@glamoureptile) <a href="https://twitter.com/glamoureptile/status/1248711080819343361?ref_src=twsrc%5Etfw">April 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></label> 
+
+                <h5>Has your culinary expertise improved in your free time?</h5>
+                <label><input type="radio" name="q7" value="0" /> I've made more banana bread than I or anyone else can handle</label>
+                <label><input type="radio" name="q7" value="3" /> Experimental, themed dinners have kept me sane</label>
+                <label><input type="radio" name="q7" value="5" /> I eat snacks for breakfast, lunch and dinner</label>
+                <label><input type="radio" name="q7" value="2" /> I'm the new Top Chef</label>
+                <label><input type="radio" name="q7" value="4" /> Cereal will forever be my go-to meal</label>             
+                
+                <h5>What's your quarantine anthem?</h5>
+                <label><input type="radio" name="q8" value="5" /> "911 / Mr. Lonely" by Tyler, The Creator, Frank Ocean, Steve Lacy</label>
+                <label><input type="radio" name="q8" value="2" /> "Don't Stand So Close To Me" by The Police</label>
+                <label><input type="radio" name="q8" value="3" /> "Cough Syrup" by Young The Giant</label>
+                <label><input type="radio" name="q8" value="4" /> "SICKO MODE" by Travis Scott</label>
+                <label><input type="radio" name="q8" value="0" /> "Contagious" by Avril Lavigne</label> 
+                
+                <h5>What does your stay at home fit look like?</h5>
+                <label><input type="radio" name="q9" value="2" /> I'm dressing up everyday just to feel something</label>
+                <label><input type="radio" name="q9" value="4" /> I change into a fresh pair of pajamas on the daily</label>
+                <label><input type="radio" name="q9" value="5" /> I'm wearing my old prom outfits just because I can</label>
+                <label><input type="radio" name="q9" value="3" /> I'll occasionally throw on a sweater and grudgingly consider a pair of jeans</label>
+                <label><input type="radio" name="q9" value="0" /> My shrunken t-shirts from middle school will have to do</label> 
+
+                <h5>If you have to go to the store, which item is your top priority?</h5>
+                <label><input type="radio" name="q10" value="4" /> Just the essentials</label>
+                <label><input type="radio" name="q10" value="0" /> I'm going straight for the hair dye</label>
+                <label><input type="radio" name="q10" value="5" /> Kleenex — I'm going to need it</label>
+                <label><input type="radio" name="q10" value="2" /> Any snack food in sight</label>
+                <label><input type="radio" name="q10" value="3" /> Dalgona whipped coffee supplies</label>             
+                
+                <button type="submit" value="Submit">Submit</button> <br>
+            
+                <credit>CD Quiz Developer // Ankit Agrawal</credit> <br>
+                
+                </form> 
+            
+                <script>
+                    document.getElementById("form1").onsubmit=function() {
+                        a1 = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+                        a2 = parseInt(document.querySelector('input[name = "q2"]:checked').value);
+                        a3 = parseInt(document.querySelector('input[name = "q3"]:checked').value);
+                        a4 = parseInt(document.querySelector('input[name = "q4"]:checked').value);
+                        a5 = parseInt(document.querySelector('input[name = "q5"]:checked').value);
+                        a6 = parseInt(document.querySelector('input[name = "q6"]:checked').value);
+                        a7 = parseInt(document.querySelector('input[name = "q7"]:checked').value);
+                        a8 = parseInt(document.querySelector('input[name = "q8"]:checked').value);
+                        a9 = parseInt(document.querySelector('input[name = "q9"]:checked').value);
+                        a10 = parseInt(document.querySelector('input[name = "q10"]:checked').value);
+                        result = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10;
+                        
+                        if (result <= 10) {
+                            result = "\"Fetch The Bolt Cutters\" - Fiona Apple";
+                            result2 = "You've been spending most of quarantine in your head and miss your artsy life in the outside world. As soon as you're free from staying at home, you'll be either hitting the thrift stores or getting cozy in your favorite downtown café. You may or may not have dyed your hair a gorgeous pastel pink or blue during this trying time. Regardless of whether or not that's true, you should check out Fiona Apple's angst-ridden and critically acclaimed new release, \"Fetch The Bolt Cutters.\"";
+                            image = "https://s3.amazonaws.com/snwceomedia/cav/10a39895-3700-486f-a9b2-b424ef73cd03.sized-1000x1000.jpg";
+                            courtesy = "Courtesy Sachyn Mital";
+                        }
+                        else if (result <= 20) {
+                            result = "\"It Is What It Is\" - Thundercat"; 
+                            result2 = "As someone who runs on good vibes, jazzy music, and social interaction, you've been filling your time with endless snacking and putting on a virtual quarantine fashion show. No matter what, you've kept up to date on all notable happenings in the music world and are devastating by losing the coveted opportunity to go to concerts. However, you'll be rocking on until the early morning in the safety of your own home to Thundercat's ambient new album, \"It Is What It Is.\"";
+                            image = "https://s3.amazonaws.com/snwceomedia/cav/bf268ac5-10f6-4e0e-b891-725fe03e6107.sized-1000x1000.jpg";
+                            courtesy = "Courtesy FifthLegend";
+                        }
+                        else if (result <= 30) {
+                            result = "\"The New Abnormal\" - The Strokes";
+                            result2 = "Going on an extreme amount of drives has helped you keep your sanity while stuck in the confines of your house. As an adrenaline-seeker with a love of adventure, you've tried everything in the book to keep you entertained, even if it means your nosy neighbors are questioning your sanity. Your silver lining has been having three separate Zoom calls with your friends every day. Fill up a little more of your time with The Strokes' killer new release, \"The New Abnormal.\"";
+                            image = "https://s3.amazonaws.com/snwceomedia/cav/8189ea39-1fd8-4442-82d7-7c807be92477.sized-1000x1000.jpg";
+                            courtesy = "Courtesy Roger Woolman";
+                        }
+                        else if (result <= 40) {
+                            result = "\"BLAME IT ON BABY\" - DaBaby";
+                            result2 = "You've vowed to stay as active and possible and your \"Let's Get Pumped\" workout playlist is growing on the daily. However, nothing compares to running down the Corner and seeing an astronomical number of friends along the way. You have begrudgingly satisfied your craving for social interaction by creating some fire DIY outfits to wear upon your re-entrance into society. Release some more of your pent up energy by listening to DaBaby's new album, \"BLAME IT ON BABY.\"";
+                            image = "https://s3.amazonaws.com/snwceomedia/cav/2a438e28-1b25-404e-ad08-a1193923f534.sized-1000x1000.jpg";
+                            courtesy = "Courtesy Azhern123";
+                        }
+                        else {
+                            result = "\"A Muse In Her Feelings\" - dvsn";
+                            result2 = "Staying at home has simply had you all in your feelings. You've been endlessly scrolling through every single one of your timelines and reminiscing on the good old days, and you may have even cracked open a high school yearbook or two. A box of Kleenex is always within arm's reach — Who can blame you? There's no doubt you'll be needing it when you listen to dvsn's new release, \"A Muse In Her Feelings.\"";
+                            image = "https://s3.amazonaws.com/snwceomedia/cav/eae6b5bb-1567-473d-8bc4-1c4dfc57fb12.sized-1000x1000.jpg";
+                            courtesy = "Courtesy The Come Up Show";
+                        };
+                    
+                        picture = "<img src='" + image + "' />";
+                        
+                        document.getElementById("grade").innerHTML = result;
+                        document.getElementById("grade2").innerHTML = result2;
+                        document.getElementById("buildpic").innerHTML = picture;
+                        document.getElementById("court").innerHTML = courtesy;
+
+                        document.getElementById("answer").style.visibility = "visible";
+
+                        return false; // required to not refresh the page; just leave this here
+                    } //this ends the submit function
+                    
+                </script>                
+            <div id=answer>
+                <boldedAnswer>
+                    <p id="grade"></p>
+                </boldedAnswer>
+                <p id="buildpic"></p>
+                <div id="imgcourtesy">
+                    <credit id="court"></credit>
+                </div>
+                 <p id="grade2"></p>
+            </div>
+        </div>      
+    </body>
+</html>

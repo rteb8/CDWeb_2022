@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UVABuildings</title>
+        <style>
+            #main {
+                margin: auto;
+            }
+            #after_submit {
+                visibility: hidden;
+                background: #85e3ff;
+                border-radius: 20px;
+                padding: 20px;
+                width: 75%;
+            }
+            #after_submit_build{
+                visibility: hidden;
+                font-weight: bold;
+                color: black;
+            }
+            #imgcourtesy{
+                text-align: right;
+            }
+            input[type=radio]{
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+                background-color:rgb(236,236,236);
+                padding: 5px;
+            }
+            input[type=radio] + img {
+                cursor: pointer;
+                outline: none;
+                outline: 5px solid gray;
+            }
+            input[type=radio]:checked + img {
+                outline: 5px solid cyan;
+            }
+            label {
+                font-weight: lighter;
+                background-color:rgb(236,236,236);
+                margin-left: 5px;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                margin-right: 5px;
+                margin-top: 5px;
+                float:left;
+                display:contents;
+            }
+            input {
+                width: 30px;
+                margin-left: 2px;
+                display: inline-block;
+            }
+            h2 {
+                clear: both;
+            }
+            button {
+                width: 100px;
+                margin-top: 20px;
+            }
+            credit{
+                font-style: oblique;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <!-- open main div -->
+            <form id="form1">
+
+                <!--QUESTION 7: TRAVEL-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/a690f71e-a90a-428f-8441-11ed71e75b41.original.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q7" value=5> <!--Rome-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/0ca2dc7a-1f5d-4d50-8e8b-3eb1e91670ad.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q7" value=2> <!--Rio de Janeiro-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/ed48af19-92cd-4a8c-8cf9-e528308407b4.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q7" value=7> <!--NYC-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/1f333edb-7162-4e16-afca-cc98424ccea1.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q7" value=1> <!--London-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/627892fd-887d-4156-b5f8-fa2abffe3260.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q7" value=6> <!--Tokyo-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/ab55c309-e509-4f6d-b2a4-d866c5cdd64d.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q7" value=8> <!--Northern Lights-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/caaecb53-075a-44f6-b99f-5e2afed8ee2c.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 2: ICE CREAM-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/bc98a551-b564-47d9-bc23-8f0908b2dc1a.original.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q2" value=1> <!--Vanilla-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/608acdb2-cec0-4c4e-9730-67e5b7fbca6e.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q2" value=8> <!--Strawberry-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/f4243920-c76d-4f09-ae0a-9d479223bfad.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q2" value=2> <!--Brownie-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/7977eb69-3752-4a89-8a74-a745f4851fe5.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q2" value=10> <!--BDay-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/fbc7cdcf-9fa2-4296-8538-4f4071f8322b.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q2" value=4> <!--Choc Chip-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/135857fe-859a-481a-af3e-cb7ae4cc5dc5.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q2" value=6> <!--Dippin Dots-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/d8bf18d1-92bc-4c39-b6f3-40c1cd88de89.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 1: COFFEE-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/524cb562-de3d-4ca8-a3ed-6f21efcf5b52.original.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q1" value=1> <!--Pumpkin Spice-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/a7c7109e-db02-4e0e-9a10-4a4f5f05272d.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value=2> <!--Double-Shot Espresso-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/65b8d380-f478-49c9-876b-5629ea3254e1.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value=6> <!--Cold Brew-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/0acafb20-8f73-449e-90ff-c663a2a5a881.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value=10> <!--Hot Choc-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/a29263c3-dd0b-4f5a-8299-2a024cc2d3ed.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value=8> <!--Green Tea-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/8105d3d7-a8e9-46c6-a06d-7d33b29ca34f.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value=4> <!--Java Chip-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/73aa94d6-dca6-4e48-89b3-ceee3aec5552.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 4: UVA PERSON-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/686ea5b0-2f18-4740-b453-6b039ef37dff.sized-1000x1000.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q4" value=8> <!--Tina Fey-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/fa5b8d37-9696-4d5a-89d0-6efdf7897413.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q4" value=1> <!--Poe-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/3db39ab5-fc2a-4fe5-bb2d-a4839654c863.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q4" value=10> <!--Sampson-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9aefee48-e988-4392-b3bf-2753a7faa492.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q4" value=9> <!--Bennett-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/d4f5b897-6d54-4b3a-8b40-04e41d6e9920.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q4" value=0> <!--Jefferson-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/4f2a8782-68fa-4c5f-9bc6-e418d388e602.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q4" value=2> <!--Couric-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/cb533df3-f345-4d5b-b036-9eb964576268.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 3: TRENDY FOOD-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/d431b697-861e-4966-b5c6-965589d4fe8a.original.png" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q3" value=8> <!--Avocado-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9a1ec9e8-19b4-4eb4-bceb-ad8d11f9bf70.original.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q3" value=1> <!--Dalgona-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/8226e4ab-30a5-4a2d-a4e0-87b26956ec25.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q3" value=4> <!--Acai-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/e9d29847-dce0-4a08-bd50-7f667ecf849d.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q3" value=2> <!--Cookie-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/123ca345-649e-432d-b446-7016645f4ad5.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q3" value=10> <!--Cronuts-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/dd57c832-c614-4e24-903a-60510f6c06a0.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q3" value=6> <!--Kale-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/aa26817c-9203-4e99-998e-3377297fad61.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 6: PROF-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/f4f0a2c3-cd72-4e69-a69b-1edc493894c7.original.png" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q6" value=2> <!--Moore-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/90a5f660-1a24-47f9-b272-fea0e992032c.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q6" value=1> <!--Sabato-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/d3219d69-0e38-4d90-a95d-850290677805.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q6" value=9> <!--Bloomfield-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9abf1ae4-ee07-4dab-ba36-67562c02fbd2.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q6" value=0> <!--Wormington-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9c86093e-54b2-47e4-8cbe-326dbd4370ed.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q6" value=10> <!--Elzinga-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/a2937fd7-f8cc-4ea5-9469-463b08704fd3.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q6" value=8> <!--Higginbotham-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9869f487-76b3-44ac-8ee0-aa4cc5f05946.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 5: MIDTERM-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/9bf871fc-e0ee-4afa-aadc-f36c35099560.original.png" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q5" value=10> <!--Boylan-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/cf3a2db8-c340-481c-9df0-995a84e43a2c.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q5" value=0> <!--Bodo's-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/839b556a-0b6c-499c-8a40-818d1fc70c9a.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q5" value=8> <!--Carr's Hill-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/c46236df-02f3-442c-8bc3-3cc86771840f.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q5" value=1> <!--Library-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/4f2e2b0a-88e1-4f26-a2e4-7563f46b12c1.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q5" value=9> <!--NCAA-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/be4ec698-e453-407d-8bab-c361877f753b.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q5" value=2> <!--Sleep-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/8c811ff1-a887-48b0-a712-f2c37534487a.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 8: DINING HALL-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/6b268d0a-260a-44ed-9687-105c7bfc1d48.sized-1000x1000.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q8" value=9> <!--Wings-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/264c3321-825e-4022-ac4d-654739452a5d.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q8" value=1> <!--Pizza-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/a6a4d4d3-ff47-40d1-885a-71731fe6326c.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q8" value=8> <!--Salad-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/24c19a40-8b11-435a-9a82-ed15ecdcc0e8.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q8" value=0> <!--Waffle-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/993edcfa-74e6-4252-8914-8b4f1a31767b.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q8" value=2> <!--Tacos-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/0ac32ea2-1fc9-4762-bc47-3551d6684d2d.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q8" value=10> <!--Dessert-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/dc6d7e19-0659-4cd3-9e57-5c95e30b4254.sized-1000x1000.png" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 9: TUNE-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/3c82cbd3-99f0-4319-982c-176c7dcf89a3.original.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q9" value=4> <!--Fireflies-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/ce570fde-e8d1-4988-a1f7-adbd3871cb8d.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q9" value=8> <!--HSM-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/9d3d30e6-e1a1-4bcc-a923-2aaddcec1925.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q9" value=2> <!--Hello-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/eca66061-5cec-44f0-b701-be36d1e6d88f.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q9" value=1> <!--Jonas Brothers-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/7ad82960-efb3-492e-98bc-9f7c2b988755.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q9" value=10> <!--Beatles-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/08161a48-2b74-4cc0-8083-15e68e62cc4b.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q9" value=6> <!--Yeah-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/0b6c5924-2670-477e-8663-66e37eb5b078.original.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <!--QUESTION 10: TRADITION-->
+                <img src="https://s3.amazonaws.com/snwceomedia/cav/e418f4eb-654a-41a4-8192-60d2784c5e9b.original.jpg" width=99% vspace=10px>
+                <label>
+                    <input type="radio" name="q10" value=8> <!--Lawn-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/88a82c1c-cfe7-40ec-8461-a8df21d15fef.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q10" value=6> <!--First-Year-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/dc649af4-d913-4502-9bca-9a1fcb869272.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q10" value=2> <!--Self-Governance-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/20d19018-7a42-4ab4-b5f7-4fc7f9f1fe2f.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q10" value=4> <!--ECON 2010-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/0cd48812-8e34-48d5-87e5-43233c23a918.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q10" value=1> <!--LOTL-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/52952ce1-4019-4a91-805b-6a2eaacf7bbb.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+                <label>
+                    <input type="radio" name="q10" value=10> <!--Honor Code-->
+                    <img src="https://s3.amazonaws.com/snwceomedia/cav/beb9c636-606f-4ae0-aa5a-8a85f33c6848.sized-1000x1000.jpg" hspace="6" vspace="7" width=31%>
+                </label>
+            
+                <button type="submit" value="Submit">Submit</button>
+            
+            <br>
+                <credit>CD Quiz Developer // Ankit Agrawal</credit> <br>
+                <credit>CD Graphics // Ankit Agrawal, Emma Hitchcock, Angela Chen, Winston Tang and Tyra Krehbiel</credit> <br>
+                <credit>CD Photo // Emma Klein, Riley Walsh, Andrew Walsh, Callie Collins and Abby Sacks </credit>
+            </form>
+
+            <script>
+                document.getElementById("form1").onsubmit = function () {
+                    q1Score = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+                    q2Score = parseInt(document.querySelector('input[name = "q2"]:checked').value);
+                    q3Score = parseInt(document.querySelector('input[name = "q3"]:checked').value);
+                    q4Score = parseInt(document.querySelector('input[name = "q4"]:checked').value);
+                    q5Score = parseInt(document.querySelector('input[name = "q5"]:checked').value);
+                    q6Score = parseInt(document.querySelector('input[name = "q6"]:checked').value);
+                    q7Score = parseInt(document.querySelector('input[name = "q7"]:checked').value);
+                    q8Score = parseInt(document.querySelector('input[name = "q8"]:checked').value);
+                    q9Score = parseInt(document.querySelector('input[name = "q9"]:checked').value);
+                    q10Score = parseInt(document.querySelector('input[name = "q10"]:checked').value);
+
+                    result = q1Score + q2Score + q3Score + q4Score + q5Score + q6Score + q7Score + 
+                            q8Score + q9Score + q10Score;
+                
+                    rotunda = "Ah, the most iconic of all U.Va. buildings. You think you're the bomb because you're a UNESCO World Heritage Site. Let's be real, you are probably the president of at least 19 CIOs on Grounds. People look up to you as a leader, and don't worry — you'll probably have our vote in the 2040 presidential election.";
+                    clark = "You're smart, sustainable and you probably own a Hydro Flask. You're a \"realistic optimist\" with big graduate school dreams — you know the number of Trin 3 visits isn't calculated into your GPA. Don't worry, all your hard work will pay off, and we respect that study grind. Your passions will get you far and help make the world a better place — after all, the turtles aren't going to save themselves!";
+                    ngh = "You love to have a deep conversation with your philosophy TA — those Thursday night 7 p.m. discussion sections are your time to shine, and we're here for it. You're a hipster, a coffee connoisseur and retro enthusiast. In 15 years, we'll definitely be seeing your latest foreign policy research on \"Good Morning America.\"";
+                    chapel = "In a world of brick and columns, you are a gothic icon. You know you were born to be great, and you enjoy order, almost as neat as the toll of church bells on the hour. There is beauty behind those closed doors, shared only by those who get to know you. You're the calm in the storm, and the peacekeeper amidst the chaos — namely, your dysfunctional lab group.";
+                    rrh = "You might not be pre-Comm, but you're definitely pre-Wall Street. You enjoy dressing up for class because you know what those management textbooks say — \"dress for success.\" You've got big goals, and while they mostly involve money, your strategic mindset will truly better the organization you're a part of. You're an all-around hustler and go-getter, and we'd definitely invest in your talent.";
+                    arch = "You probably liked [insert obscure indie artist here] before it was cool, but that just shows that you are your own brand. You're a natural night owl, but the best pieces in your portfolio were the products of a 3 a.m. instant coffee and a few John Lennon hits. You're creative and innovative, and your next \"Falling Water\" will make you a household name.";
+                    afc = "Spotify knows just the right ear-shattering, brain-frying rap to get your blood pumping. Your gym grind extends beyond the weight room, though. You've always been a hard worker, and your grades and gains show for it. You're a trustworthy friend that many people genuinely appreciate — after all, let's not forget that you're reliable enough to spot your friend while they \"PR\" at the bench press.";
+                    thornton = "You're a bit old-fashioned, but that's OK. You live your life according to a routine that's never let you down. You have the mind of an analytical genius, so you're probably the one asking those questions even the professor can't figure out on Piazza. You're the group member that everyone is thankful for because you guarantee that 4.0 GPA. In the long-run, your dedication to getting the job done will get you far.";
+                    univAve = "You're fun and fresh and the easiest to get along with. When you made your froomie bio on Facebook, it probably went \"I love to go out, but I'm also down to stay in and study.\" We all know you grab your \"pinkity drinkity\" at Starbies before snagging the window seat at 1515. You're an all-around expert at maintaining that work-hard, play-hard personality, which will come in handy in the future.";
+                    alum = "You're wise beyond your years and the \"mom\" of the friend group. You always give the best advice and know how to lift someone up when they feel down — chances are, you've already been through it. You're trustworthy and loyal, and not afraid to dole out constructive criticism if it's needed. Naturally, you're the biggest 'Hoo of them all — your kids will probably end up at the University, too.";
+
+                    building = "none";
+                    feedback = "none";
+                    image = "none";
+                    courtesy = "none";
+                    if(result <= 10){
+                    building = "You are the Rotunda";
+                    feedback = rotunda;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/a6255f87-cdf7-4783-92a7-e8c2e8cc81bd.original.jpg";
+                    courtesy = "Emma Klein | The Cavalier Daily";
+                    }
+                    else if(result <= 20){
+                    building = "You are Clark Hall!";
+                    feedback = clark;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/0ea4e382-9737-4e98-8811-0137b804408d.original.jpg";
+                    courtesy = "Andrew Walsh | The Cavalier Daily";
+                    }
+                    else if(result <= 30){
+                    building = "You are Nau and Gibson Halls!";
+                    feedback = ngh;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/64712a22-fa54-4d01-ab5b-a19e79a0dc6e.original.jpg";
+                    courtesy = "Photo courtesy University of Virginia";
+                    }
+                    else if(result <= 40){
+                    building = "You are the University Chapel!";
+                    feedback = chapel;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/7e9c4dbd-97db-4327-bcf6-3e8d4b98834a.original.jpg";
+                    courtesy = "Riley Walsh | The Cavalier Daily";
+                    }
+                    else if(result <= 50){
+                    building = "You are Rouss-Robertson Hall!";
+                    feedback = rrh;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/d9c54e90-af02-4e57-aed2-1c299e88fe2a.original.jpg";
+                    courtesy = "Abby Sacks | The Cavalier Daily";
+                    }
+                    else if(result <= 60){
+                    building = "You are the U.Va. School of Architecture";
+                    feedback = arch;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/087d9e4d-f4fd-4af1-90f8-0cf1c7f51e01.sized-1000x1000.jpg";
+                    courtesy = "Callie Collins | The Cavalier Daily";
+                    }
+                    else if(result <= 70){
+                    building = "You are the Aquatic and Fitness Center!";
+                    feedback = afc;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/5b270d75-3caf-40f1-82cd-25c15137c643.original.jpg";
+                    courtesy = "Emma Klein | The Cavalier Daily";
+                    }
+                    else if(result <= 80){
+                    building = "You are Thornton Hall!";
+                    feedback = thornton;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/c88d38a1-60a3-4710-a34b-c96cba172ac3.original.jpg";
+                    courtesy = "Andrew Walsh | The Cavalier Daily";
+                    }
+                    else if(result <= 90){
+                    building = "You are 1515!";
+                    feedback = univAve;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/e9c2b9b9-c205-46c5-a832-b2da41f95b69.original.jpg";
+                    courtesy = "Emma Klein | The Cavalier Daily";
+                    }
+                    else {
+                    building = "You are Alumni Hall!";
+                    feedback = alum;
+                    image = "https://s3.amazonaws.com/snwceomedia/cav/8d34789b-7d67-4362-8514-cd505e4b905e.original.jpg";
+                    courtesy = "Andrew Walsh | The Cavalier Daily";
+                    }
+                    
+                    picture = "<img src='" + image + "' />";
+                
+                    document.getElementById("after_submit").style.visibility = "visible";
+                    document.getElementById("after_submit_build").style.visibility = "visible";
+
+                    document.getElementById("build").innerHTML = building;
+                    document.getElementById("buildpic").innerHTML = picture;
+                    document.getElementById("feed").innerHTML = feedback;    
+                    document.getElementById("court").innerHTML = courtesy;
+                    return false;
+                }
+
+            </script>
+        
+            <br>
+            <div id="after_submit">
+                <div id="after_submit_build">
+                    <p id="build"></p>
+                </div>
+                <p id="buildpic"></p>
+                <div id="imgcourtesy">
+                <credit id="court"></credit>
+                </div>
+                <p id="feed"></p>
+            </div>
+        </div><!-- close main div -->
+    </body>
+</html>

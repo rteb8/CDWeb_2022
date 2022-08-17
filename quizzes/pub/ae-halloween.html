@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Halloween Quiz</title>
+        <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+        <style>
+            #main {
+                margin: auto;
+                padding: 5px;
+                font-family: 'Spartan';
+            }
+            #answer{
+                visibility: hidden;
+                background-color: #7da2a2;
+                padding: 10px;
+                margin: 5px;
+                text-align: center;
+            }
+            #imgcourtesy{
+                text-align: right;
+            }
+            label {
+                display: block;
+                border-radius: 1px;
+                margin: 5px;
+                padding: 10px;
+                border-color: lightgray;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+            }
+            #question {
+                padding: 20px;
+                background-color: #41001F;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-family: 'Cinzel';
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+            }
+            button {
+                background-color: #2e4545;
+                border: none;
+                border-radius: none;
+                color: white;
+                padding: 16px 32px;
+                margin: 5px;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: medium;
+                letter-spacing: 2px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+            }
+            credit{
+                font-style: oblique;
+                font-size: smaller;
+            }
+        </style>             
+        <title>JavaScript Quiz</title>
+    </head>
+    <body>
+        <div id="main"><!-- open main div -->
+            <form id="form1">
+
+                <h3 id="question">What was your favorite part of Halloween as a kid?</h3>
+                <label><input type="radio" name="q1" value="3" /> The tricks — you may or may not have TP’ed your fair share of houses</label>
+                <label><input type="radio" name="q1" value="4" /> Carving creepy jack-o-lanterns and decorating the yard</label>
+                <label><input type="radio" name="q1" value="2" /> Your creative costumes that always got compliments from the neighbors</label>
+                <label><input type="radio" name="q1" value="5" /> Visiting your local haunted house</label>
+                <label><input type="radio" name="q1" value="0" /> Eating candy, duh!</label>            
+
+                <h3 id="question">How scary do you like your movies?</h3>
+                <label><input type="radio" name="q2" value="0" /> Not at all</label>
+                <label><input type="radio" name="q2" value="2" /> Spooky, but in a hokey way</label>
+                <label><input type="radio" name="q2" value="3" /> I want to be at the edge of my seat with jump scares</label>
+                <label><input type="radio" name="q2" value="4" /> I want to be haunted in my nightmares for weeks</label>
+                <label><input type="radio" name="q2" value="5" /> My fear tolerance is so high I am basically immune</label> 
+
+                <h3 id="question">Which of the following would you dress up as?</h3>
+                <label><input type="radio" name="q3" value="2" /> A witch</label>
+                <label><input type="radio" name="q3" value="0" /> Grapes</label>
+                <label><input type="radio" name="q3" value="4" /> "A" from "Pretty Little Liars"</label>
+                <label><input type="radio" name="q3" value="5" /> Pennywise the clown</label>
+                <label><input type="radio" name="q3" value="3" /> A vampire</label> 
+                
+                <h3 id="question">What's your favorite spooky television show?</h3>
+                <label><input type="radio" name="q4" value="0" /> "Scooby Doo"</label>
+                <label><input type="radio" name="q4" value="4" /> "Supernatural"</label>
+                <label><input type="radio" name="q4" value="3" /> "Buffy the Vampire Slayer"</label>
+                <label><input type="radio" name="q4" value="2" /> "Stranger Things"</label>
+                <label><input type="radio" name="q4" value="5" /> "American Horror Story"</label>             
+                
+                <h3 id="question">What are you decorating your door with this year?</h3>
+                <label><input type="radio" name="q5" value="3" /> DIY paper ghosts</label>
+                <label><input type="radio" name="q5" value="5" /> Fake spider webs and a gigantic spider</label>
+                <label><input type="radio" name="q5" value="0" /> A hand-carved jack-o-lantern</label>
+                <label><input type="radio" name="q5" value="2" /> Fun Halloween-themed stickers</label>
+                <label><input type="radio" name="q5" value="4" /> Nothing</label> 
+
+                <h3 id="question">What festive dish would you be most likely to serve at your costume party?</h3>
+                <label><input type="radio" name="q6" value="5" /> Bloddy punch</label>
+                <label><input type="radio" name="q6" value="0" /> Jack-o-lantern clementines</label>
+                <label><input type="radio" name="q6" value="3" /> Ghost cookies</label>
+                <label><input type="radio" name="q6" value="4" /> Mummy pizza bread</label>
+                <label><input type="radio" name="q6" value="2" /> Candy apples</label> 
+
+                <h3 id="question">Who’s your favorite character from “It’s the Great Pumpkin, Charlie Brown?”</h3>
+                <label><input type="radio" name="q7" value="2" /> Linus</label>
+                <label><input type="radio" name="q7" value="0" /> Sally</label>
+                <label><input type="radio" name="q7" value="5" /> Charlie</label>
+                <label><input type="radio" name="q7" value="3" /> Snoopy</label>
+                <label><input type="radio" name="q7" value="4" /> I've never watch Charlie Brown</label>             
+                
+                <h3 id="question">Which song is at the top of your October playlist?</h3>
+                <label><input type="radio" name="q8" value="3" /> “Thriller” by Michael Jackson</label>
+                <label><input type="radio" name="q8" value="2" /> “I Want Candy” by Bow Wow Wow</label>
+                <label><input type="radio" name="q8" value="5" /> “Monster” by Kanye West</label>
+                <label><input type="radio" name="q8" value="4" /> “Haunted” by Taylor Swift</label>
+                <label><input type="radio" name="q8" value="0" /> “Spooky Scary Skeletons” by Andrew Gold</label> 
+                
+                <h3 id="question">What’s your favorite way to spend Halloween at the University when there is not a pandemic?</h3>
+                <label><input type="radio" name="q9" value="0" /> Trick-or-Treating on the Lawn! There’s nothing more fun than giving candy to kids</label>
+                <label><input type="radio" name="q9" value="4" /> At a costume party</label>
+                <label><input type="radio" name="q9" value="3" /> Dressing up to do some trick-or-treating yourself — you can still pass as a kid</label>
+                <label><input type="radio" name="q9" value="5" /> Horror movie marathon with friends</label>
+                <label><input type="radio" name="q9" value="2" /> It doesn’t matter as long as there is candy involved</label> 
+
+                <h3 id="question">Most importantly, what’s your go-to candy?</h3>
+                <label><input type="radio" name="q10" value="3" /> Hershey’s chocolate bars</label>
+                <label><input type="radio" name="q10" value="2" /> Reese’s Peanut Butter Cups</label>
+                <label><input type="radio" name="q10" value="0" /> Candy corn</label>
+                <label><input type="radio" name="q10" value="4" /> Skittles</label>
+                <label><input type="radio" name="q10" value="5" /> Sour Patch Kids</label>             
+                
+                <button type="submit" value="Submit">Submit</button> <br>
+            
+                <credit>CD Quiz Developer // Tyra Krehbiel</credit> <br>
+                
+                </form> 
+            
+                <script>
+                    document.getElementById("form1").onsubmit=function() {
+                        a1 = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+                        a2 = parseInt(document.querySelector('input[name = "q2"]:checked').value);
+                        a3 = parseInt(document.querySelector('input[name = "q3"]:checked').value);
+                        a4 = parseInt(document.querySelector('input[name = "q4"]:checked').value);
+                        a5 = parseInt(document.querySelector('input[name = "q5"]:checked').value);
+                        a6 = parseInt(document.querySelector('input[name = "q6"]:checked').value);
+                        a7 = parseInt(document.querySelector('input[name = "q7"]:checked').value);
+                        a8 = parseInt(document.querySelector('input[name = "q8"]:checked').value);
+                        a9 = parseInt(document.querySelector('input[name = "q9"]:checked').value);
+                        a10 = parseInt(document.querySelector('input[name = "q10"]:checked').value);
+                        result = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10;
+                        
+                        if (result <= 10) {
+                            result = "\"HalloweenTown\" (1998)";
+                            result2 = "For you, Halloween is all about nostalgia. Trick-or-treating at eight years old, planning your costume months in advance, getting a stomach ache after sneaking too much candy — those were the good old days. Though you can’t travel back in time, you can try to recreate the childhood magic of Halloween — so you do, every year. That’s why you should return to the ultimate Disney throwback flick, \“Halloweentown.\” Is it really October if you don’t watch it and its many iterations?";
+                            image = "https://snworksceo.imgix.net/cav/dcdd6afe-b7d1-41a0-9989-8dbe3fdab83d.sized-1000x1000.jpeg?w=1000";
+                            courtesy = "Courtesy Emma Hitchcock | The Cavalier Daily";
+                        }
+                        else if (result <= 20) {
+                            result = "\"Hocus Pocus\" (1993)"; 
+                            result2 = "Halloween is all about fun, in your opinion. The costumes and decorations are a highlight for you, but the true star of Halloween has always been and will always be candy. You love the spooky vibes, too, but you don’t want to actually have nightmares for weeks after watching a horror movie. As sweet as your top candy pick, \“Hocus Pocus\” encompasses everything fun about Halloween with creepy undertones, but nothing that will spook you past the ending credits.";
+                            image = "https://snworksceo.imgix.net/cav/ffd74061-b2a7-4e15-8990-bbe97d11fa11.sized-1000x1000.jpeg?w=1000";
+                            courtesy = "Courtesy Emma Hitchcock | The Cavalier Daily";
+                        }
+                        else if (result <= 30) {
+                            result = "\"Scream\" (1996)";
+                            result2 = "You love everything about the spookiest day of the year. The tricks, the treats — all of it is right up your alley. You watch the same three Halloween movies annually because they’re just that good, and you like to go all out with your decorations and make a day out of carving jack-o-lanterns. The definition of a classic, \“Scream\” also had a little bit of everything you love — humor, scares, clever references to classic horror movie tropes and a few celebrity names.";
+                            image = "https://snworksceo.imgix.net/cav/27c33d0b-b25e-49f7-a11c-68352966928c.sized-1000x1000.jpeg?w=1000";
+                            courtesy = "Courtesy Emma Hitchcock | The Cavalier Daily";
+                        }
+                        else if (result <= 40) {
+                            result = "\"Get Out\" (2017)";
+                            result2 = "Halloween is great and all, but you have other things going on in your life and do not need the whole month of October to be consumed by cheesy costumes and pranks. You still like to get in the spirit, though, and cozy up with a high quality horror movie on the big night. That’s why \“Get Out\” is the psychological thriller you should watch this Oct. 31. Not only is it creepy enough to be an impeccable choice for Halloween night, but highlights a real issue that is relevant every day of the year.";
+                            image = "https://snworksceo.imgix.net/cav/60771ee4-be88-47c9-85aa-351098b67f9e.sized-1000x1000.png?w=1000";
+                            courtesy = "Courtesy Angela Chen | The Cavalier Daily";
+                        }
+                        else {
+                            result = "\"The Exorcist\" (1973)";
+                            result2 = "You’ve pretty much mastered every Halloween trick there is. The candy is fun, sure, but haunted houses are much more up your speed. Your fear tolerance is high, so you’re looking for something that will actually scare you this year. That’s why you should turn to arguably one of the creepiest films of all time, \“The Exorcist.\” If this classic flick doesn’t haunt you, nothing will.";
+                            image = "https://snworksceo.imgix.net/cav/7f073533-7330-4ea2-90d6-7d250d8128b9.sized-1000x1000.png?w=1000";
+                            courtesy = "Courtesy Angela Chen | The Cavalier Daily";
+                        };
+                    
+                        picture = "<img src='" + image + "' />";
+                        
+                        document.getElementById("grade").innerHTML = result;
+                        document.getElementById("grade2").innerHTML = result2;
+                        document.getElementById("buildpic").innerHTML = picture;
+                        document.getElementById("court").innerHTML = courtesy;
+
+                        document.getElementById("answer").style.visibility = "visible";
+
+                        return false; // required to not refresh the page; just leave this here
+                    } //this ends the submit function
+                    
+                </script>                
+            <div id=answer>
+                <h3 id="grade"></h3>
+                <hr>
+                <p id="buildpic"></p>
+                <div id="imgcourtesy">
+                    <credit id="court"></credit>
+                </div>
+                 <p id="grade2"></p>
+            </div>
+        </div>      
+    </body>
+</html>

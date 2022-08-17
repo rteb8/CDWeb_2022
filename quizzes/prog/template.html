@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Template</title>
+
+    <!-- Boostrap (remove when pasting into CEO)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+
+    <style>
+        #root{
+            font-family: Spartan;
+        }
+
+        /* override bootstrap */
+        .btn-choice:not(:disabled):not(.disabled).active,
+        .show>.btn-choice.dropdown-toggle {
+            color: white;
+            background-color: #6B8EB6;
+            outline: none;
+        }
+        .choices{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .btn-choice{
+            box-shadow: 0.2rem .2rem 0.2rem rgba(0,0,0,.08);
+            border-radius: 1px;
+        }
+
+        /* text questions */
+        .long{
+            width: 100%;
+            padding: 2rem;
+        }
+        .short{
+            width: 33%;
+            padding: 4rem;
+        }
+        .quest{
+            background-color: darkgray;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* image questions */
+        .img-choice{
+            width: 33%;
+        }
+        .img-quest{
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .img{
+            width: 100%;
+        }
+
+        /* submit and credit */
+        .btn-submit{
+            color: white;
+            background-color: #32527B;
+            opacity: 75%;
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .btn-submit:hover{
+            opacity: 100%;
+            color: white;
+        }
+        #credit{
+            text-align: right;
+        }
+
+        /* answers */
+        #answer{
+            visibility: hidden;
+            background-color: #BBD3E7;
+            text-align: center;
+            padding: 2rem;
+            max-width: 100%;
+        }
+        .res{
+            text-align: center;
+            padding: 1rem;
+        }
+        .descr{
+            text-align: justify;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            margin: 1rem;
+        }
+        .court{
+            font-size: small;
+        }
+    </style>             
+</head>
+<body>
+    <div id="root">
+        <form id="form1">
+
+            <h4 class="quest">Text Question, with Long Text Choices</h4>
+            <div class="btn-group-toggle choices" data-toggle="buttons">
+                <div class="btn btn-choice long">
+                    <input type="radio" name="q1" value="1" autocomplete="off"/>Choice 1
+                </div>
+                <div class="btn btn-choice long">
+                    <input type="radio" name="q1" value="2" autocomplete="off"/>Choice 2
+                </div>
+                <div class="btn btn-choice long">
+                    <input type="radio" name="q1" value="3" autocomplete="off"/>Choice 3
+                </div>
+                <div class="btn btn-choice long">
+                    <input type="radio" name="q1" value="4" autocomplete="off"/>Choice 4
+                </div>
+                <div class="btn btn-choice long">
+                    <input type="radio" name="q1" value="5" autocomplete="off"/>Choice 5
+                </div>
+            </div>            
+
+            <h4 class="quest">Text Question, with Short Text Choices</h4>
+            <div class="btn-group-toggle choices" data-toggle="buttons">
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="1" autocomplete="off"/>Choice 1, Slightly longer
+                </div>
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="2" autocomplete="off"/>Choice 2
+                </div>
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="3" autocomplete="off"/>Choice 3
+                </div>
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="4" autocomplete="off"/>Choice 4
+                </div>
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="5" autocomplete="off"/>Choice 5
+                </div>
+                <div class="btn btn-choice short">
+                    <input type="radio" name="q2" value="6" autocomplete="off"/>Choice 6
+                </div>
+            </div>
+
+           <!-- Image Question w/ Image Choices -->
+            <img class="img-quest" src="./temp-img/question.png">
+            <div class="btn-group-toggle choices" data-toggle="buttons">
+                <div class="btn btn-choice img-choice">
+                    <input type="radio" name="q3" value="1" autocomplete="off"/>
+                    <img class="img" src="./temp-img/choice.png">
+                </div>
+                <div class="btn btn-choice img-choice">
+                    <input type="radio" name="q3" value="2" autocomplete="off"/>
+                    <img class="img" src="./temp-img/choice.png">
+                </div>
+                <div class="btn btn-choice img-choice">
+                    <input type="radio" name="q3" value="3" autocomplete="off"/>
+                    <img class="img" src="./temp-img/choice.png">
+                </div>
+                <div class="btn btn-choice img-choice">
+                    <input type="radio" name="q3" value="4" autocomplete="off"/>
+                    <img class="img" src="./temp-img/choice.png">
+                </div>
+                <div class="btn btn-choice img-choice">
+                    <input type="radio" name="q3" value="5" autocomplete="off"/>
+                    <img class="img" src="./temp-img/choice.png">
+                </div>
+                <div class="img-choice"> <!-- To make the number of choices even-->
+                    <img class="img" src="./temp-img/white-choice.png">
+                </div>
+            </div> 
+
+            <h4 class="quest">Text Question, with Tweet Choices</h4>
+            <div class="btn-group-toggle choices" data-toggle="buttons">
+                <div class="btn btn-choice">
+                    <input type="radio" name="q4" value="1" autocomplete="off"/> <!-- removed blockquote class, removes formatting, better format, allows for easier clickign -->
+                    <blockquote><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="btn btn-choice">
+                    <input type="radio" name="q4" value="2" autocomplete="off"/>
+                    <blockquote><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="btn btn-choice">
+                    <input type="radio" name="q4" value="3" autocomplete="off"/>
+                    <blockquote><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="btn btn-choice">
+                    <input type="radio" name="q4" value="4" autocomplete="off"/>
+                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="btn btn-choice">
+                    <input type="radio" name="q4" value="5" autocomplete="off"/>
+                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">tik tok truly paralyzes me like i'll watch it for 45 minutes in whatever position i was in when i opened it. the stillness of a lizard in danger</p>&mdash; charlie (@chunkbardey) <a href="https://twitter.com/chunkbardey/status/1251342163658620928?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="btn btn-submit" type="submit" value="Submit">
+                Submit
+            </button>
+            
+            <br>
+        
+            <!-- Credits: 
+                if list > 1, last two names are "..., A and B"
+                may need credits for CD Graphics and CD Photo
+            -->
+            <div id="credit">
+                <credit>CD Quiz Developer // First Last, ...</credit><br>
+            </div>
+        </form> 
+
+        <!-- Bootstrap JavaScript files -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    
+        <script>
+            document.getElementById("form1").onsubmit=function() {
+                a1 = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+                a2 = parseInt(document.querySelector('input[name = "q2"]:checked').value);
+                a3 = parseInt(document.querySelector('input[name = "q3"]:checked').value);
+                a4 = parseInt(document.querySelector('input[name = "q4"]:checked').value);
+                total = a1 + a2 + a3 + a4;
+                
+                if (total <= 10) {
+                    title = "Title 1";
+                    descr = "Description 1";
+                    image = "./temp-img/choice.png";
+                    court = "Courtesy 1";
+                }
+                else {
+                    title = "Title 2";
+                    descr = "Description 2";
+                    image = "./temp-img/choice.png";
+                    court = "Courtesy 2";
+                };
+            
+                picture = "<img src='" + image + "' />"; // dynamically create img tag
+                
+                document.getElementById("res").innerHTML = title;
+                document.getElementById("descr").innerHTML = descr;
+                document.getElementById("pic").innerHTML = picture;
+                document.getElementById("court").innerHTML = court;
+                document.getElementById("answer").style.visibility = "visible";
+
+                return false; // required to not refresh the page
+            }
+            
+        </script>                
+        <div id="answer">
+            <h4 class="res" id="res"></h4>
+            <hr>
+            <p id="pic"></p>
+            <credit class="court" id="court"></credit>
+            <p class="descr" id="descr"></p>
+        </div>
+    </div>      
+</body>
+</html>
